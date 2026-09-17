@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang = "es">
+    <head>
+        <meta charset="utf-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+        <title>Lulii</title>
+        <link rel="icon" type="image/png" href="{% static 'assets/icono.png' %}">
+    </head>
+    <body>
+        <header id="header">
+            <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a href="#inicio" class="navbar-brand logo">Lulii (˶˃ ᵕ ˂˶) ୭ ᵎᵎ 🧁</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-links">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+
+                <button id="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                </div>
+            </div>
+            </nav>
+        </header>
+
+        
+        <div class="container-fluid gradiente">
+            <section id="inicio" class="hero">
+                <p>.<br>.</p>
+                <div class="gifs" role="img" aria-label="Banner decorativo">
+                    <div class="gifs-repetido"></div>
+                    <img src="{% static 'assets/banner.gif' %}" class="gifs-final" alt="">
+                </div>
+                <div class="container hero-grid">
+                    <div class="hero-texto">
+                    <h1>⊹ ࣪ ˖ Lucía Budani (˶ˆ꒳ˆ˵)</h1>
+                    <p class="hero-descripcion">Bienvenid@ a mi página web!! ⸜(｡˃ ᵕ ˂)⸝♡
+                    </p>
+                    </div>
+                </div>
+                </section>
+                
+            <section id="sobre-mi" class="seccion">
+                <div class="container">
+                    <h2>⋆.˚ Sobre mí ꉂ(˵˃ ᗜ ˂˵)</h2>
+                    <div class="sobre-mi-grid">
+                    <div class="foto-wrapper">
+                        <img src="{% static 'assets/foto-perfil.png' %}" alt="Foto de Lucía Budani" class="foto-perfil">
+                    </div>
+                    <p class="sobre-mi-texto">
+                        Soy Luli, estudiante y desarrolladora en formación, con interés en la programación y el desarrollo web!! ᓚ₍ ^. .^₎<br>
+                        Actualmente cuento con conocimientos en Python y continúo ampliando mis habilidades en tecnologías de desarrollo frontend. Me interesa aprender, crear nuevos proyectos y seguir desarrollando mis conocimientos en el área de la tecnología.
+                    </p>
+                    </div>
+                </div>
+                </section>
+
+        <section id="proyectos" class="seccion seccion-alt">
+            <div class="container">
+                <h2>˚ ༘ ೀ⋆｡˚ Proyectos ૮ ྀིᴗ͈ . ᴗ͈ ྀིა</h2>
+                <div class="proyectos-grid">
+
+                <article class="proyecto-card">
+                    <img src="{% static 'assets/proyecto1.png' %}" alt="Captura del Proyecto 1">
+                    <div class="proyecto-body">
+                    <h3>Stray Tower Defense</h3>
+                    <p>
+                        Juego de tipo Tower Defense realizado con mi compañero Dante Rodriguez.
+                    </p>
+                    <ul class="tecnologias">
+                        <li>Python</li>
+                        <li>Pygame</li>
+                    </ul>
+                    <div class="proyecto-links">
+                        <a href="https://github.com/DanteRodriguezHola/Tower-Defense" target="_blank" rel="noopener noreferrer">Ir al Repositorio</a>
+                    </div>
+                    </div>
+                </article>
+
+                <article class="proyecto-card">
+                    <img src="{% static 'assets/proyecto2.png' %}" alt="Captura del Proyecto 2">
+                    <div class="proyecto-body">
+                    <h3>Luliify</h3>
+                    <p>
+                        Reproductor de música básico creado con la libreria TKinter.
+                    </p>
+                    <ul class="tecnologias">
+                        <li>Python</li>
+                        <li>Tkinter</li>
+                    </ul>
+                    <div class="proyecto-links">
+                        <a href="https://github.com/sbudani-cloud/tp_1" target="_blank" rel="noopener noreferrer">Ir al Repositorio</a>
+                    </div>
+                    </div>
+                </article>
+                </div>
+            </div>
+            </section>
+            
+        <section id="habilidades" class="seccion">
+            <div class="container">
+                <h2>₊⊹ Habilidades Técnicas (˶ᵔ ᵕ ᵔ˶)</h2>
+                <ul class="habilidades-lista">
+                <li><i class="fa-brands fa-html5"></i><span>HTML</span></li>
+                <li><i class="fa-brands fa-css3-alt"></i><span>CSS</span></li>
+                <li><i class="fa-brands fa-python"></i><span>Python</span></li>
+                <li><i class="fa-brands fa-git-alt"></i><span>Git</span></li>
+                <li><i class="fa-brands fa-github"></i><span>GitHub</span></li>
+                </ul>
+            </div>
+            </section>
+        
+
+            <section id="contacto" class="seccion seccion-alt">
+                <div class="container">
+                    <h2>୭ ˚. ᵎᵎ Contacto ˗ˏˋ ꒰ ✉︎ ꒱ ˎˊ˗</h2>
+                    <div class="contacto-grid">
+                    <form id="form-contacto" class="formulario-contacto">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+                        <button type="submit" class="btn btn-primario">Enviar</button>
+                    </form>
+
+                    <div class="redes-panel">
+                        <p>O encontrame en:</p>
+                        <a href="mailto:sbudani@alumno.huergo.edu.ar"><i class="fa-solid fa-envelope"></i> sbudani@alumno.huergo.edu.ar</a>
+                        <a href="https://github.com/sbudani-cloud" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+                        <a href="https://www.instagram.com/leomessi/?hl=es" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    </div>
+                    </div>
+                </div>
+                </section>
+            
+            <footer id="footer">
+                <p>&copy; <span id="anio"></span> Lucía Budani. Todos los derechos reservados.</p>
+            </footer>
+        </div>
+
+
+        <!-- profe tuve que usar ia 100% para este script de los temas oscuro y claro porque no podía perdon -->
+        <script>
+            document.getElementById('anio').textContent = new Date().getFullYear();
+
+            const themeToggle = document.getElementById('theme-toggle');
+            const icon = themeToggle.querySelector('i');
+
+            function aplicarTema(tema) {
+            if (tema === 'oscuro') {
+                document.body.classList.add('dark-mode');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                document.body.classList.remove('dark-mode');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+            }
+
+            const temaGuardado = localStorage.getItem('tema') || 'claro';
+            aplicarTema(temaGuardado);
+
+            themeToggle.addEventListener('click', () => {
+            const nuevoTema = document.body.classList.contains('dark-mode') ? 'claro' : 'oscuro';
+            aplicarTema(nuevoTema);
+            localStorage.setItem('tema', nuevoTema);
+            });
+
+            const formContacto = document.getElementById('form-contacto');
+            formContacto.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('¡Gracias por tu mensaje! Te voy a responder pronto.');
+            formContacto.reset();
+            });
+        </script>
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
+</html>
