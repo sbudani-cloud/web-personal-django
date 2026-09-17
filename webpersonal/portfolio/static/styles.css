@@ -349,3 +349,19 @@ body.dark-mode .navbar-toggler-icon {
 }
 
 #theme-toggle:hover { transform: rotate(15deg); }
+
+.nav-links .nav-link:hover {
+  animation: saltito 0.3s ease;
+}
+
+@keyframes saltito {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+  }
+  70% {
+    transform: translateY(-2px);
+  }
+}
