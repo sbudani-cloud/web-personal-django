@@ -4,7 +4,15 @@
 
     --color-titulo: #e259ae;
 
-    --color-tags: #fda5c2;
+    --color-titulo-posts: #f3a6d4;
+
+    --color-tags: #f791bc;
+
+    --border-color: #f388c3;
+    --border-shadow: #e060a7;
+
+    --sombra: #06f562;
+
 }
 
 .gradiente {
@@ -16,17 +24,23 @@ h1 {
 }
 
 .proyecto-card {
-    border: 2px solid #f10101;
-    border-top: 4px solid #03f738;
+    border: 2px solid var(--border-color);
+    border-bottom: 4px solid var(--border-shadow);
+    border-right: 4px solid var(--border-shadow);
     border-radius: 15px;
     overflow: hidden;
+    margin: 2rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin: 1rem;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-4px);
+    box-shadow: #03f02b;
 }
 
 .proyecto-body { padding: 1.4rem; }
 
-.tecnologias {
+.tags {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
@@ -35,10 +49,14 @@ h1 {
     margin: 0.8rem 0;
 }
 
-.tecnologias li {
+.tags li {
     font-size: 0.8rem;
     background-color: var(--color-tags);
-    color: #f7e605;
+    color: #ffffff;
     padding: 0.25rem 0.6rem;
     border-radius: 999px;
+}
+
+a {
+    color: var(--color-titulo-posts);
 }

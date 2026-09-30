@@ -15,24 +15,19 @@
         <div class='container-fluid gradiente'>
             <h1>aca estan mis posts y eso</h1>
             {% for post in posts %}
-                <h2><a href="{% url 'detail' post.slug %}">{{post.title}}</a></h2>
-                
+                <article class="proyecto-card">
+                    <div class="proyecto-body">
+                    <h2><a href="{% url 'detail' post.slug %}">{{post.title}}</a></h2>
+                    <span>{{post.created_at|date:'d/m/Y'}}</span>
+                    <ul class="tags">
+                        <li>tag1</li>
+                        <li>tag2</li>
+                    </ul>
+                    <p>
+                        descripicon....
+                    </p>
+                    </div>
+                </article>
             {% endfor %}
         </div>
     </body>
-
-
-{% for post in posts %}
-    <article class="proyecto-card">
-        <div class="proyecto-body">
-        <h2><a href="{% url 'detail' post.slug %}">{{post.title}}</a></h2>
-        <p>
-            descripicon....
-        </p>
-        <ul class="tecnologias">
-            <li>Python</li>
-            <li>Pygame</li>
-        </ul>
-        </div>
-    </article>
-{% endfor %}
