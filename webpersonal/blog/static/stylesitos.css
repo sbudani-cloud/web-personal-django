@@ -1,0 +1,44 @@
+:root {
+    --bg-gradient-center: #ffffff;
+    --bg-gradient-border: #ffc5dd;
+
+    --color-titulo: #e259ae;
+
+    --color-tags: #fda5c2;
+}
+
+.gradiente {
+    background: radial-gradient(var(--bg-gradient-center), var(--bg-gradient-border));
+}
+
+h1 {
+    color: var(--color-titulo);
+}
+
+.proyecto-card {
+    border: 2px solid #f10101;
+    border-top: 4px solid #03f738;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin: 1rem;
+}
+
+.proyecto-body { padding: 1.4rem; }
+
+.tecnologias {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0.8rem 0;
+}
+
+.tecnologias li {
+    font-size: 0.8rem;
+    background-color: var(--color-tags);
+    color: #f7e605;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+}

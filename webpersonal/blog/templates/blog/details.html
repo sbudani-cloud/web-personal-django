@@ -6,8 +6,11 @@
     <span>{{post.created_at}}</span>
 
     <div>
-        {{post.content}}
+        <br> <!-- dps cambio pq esta mal poner un br asi noma -->
+        {{post.content|linebreaks}}
     </div>
+
+    <hr>
 
     <div>
         <form method='post' action='.'>

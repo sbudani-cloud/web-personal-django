@@ -1,14 +1,38 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html lang = "es">
     <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        
         <meta charset="utf-8">
         <title>Lulii</title>
         <link rel="icon" type="image/png" href="">
+        <link rel="stylesheet" href="{% static 'stylesitos.css' %}">
     </head>
     <body>
-        <h1>aca estan mis posts y eso</h1>
-        {% for post in posts %}
-            <h2>{{post.title}}</h2>
-            <a href="{% url 'detail' post.slug %}">leer mas pero dps lo cambio todo a eso mas ao3 y asi</a>
-        {% endfor %}
+        <div class='container-fluid gradiente'>
+            <h1>aca estan mis posts y eso</h1>
+            {% for post in posts %}
+                <h2><a href="{% url 'detail' post.slug %}">{{post.title}}</a></h2>
+                
+            {% endfor %}
+        </div>
     </body>
+
+
+{% for post in posts %}
+    <article class="proyecto-card">
+        <div class="proyecto-body">
+        <h2><a href="{% url 'detail' post.slug %}">{{post.title}}</a></h2>
+        <p>
+            descripicon....
+        </p>
+        <ul class="tecnologias">
+            <li>Python</li>
+            <li>Pygame</li>
+        </ul>
+        </div>
+    </article>
+{% endfor %}
