@@ -6,8 +6,9 @@
         <link rel="icon" type="image/png" href="">
     </head>
     <body>
-        <h1>holi</h1>
+        <h1>aca estan mis posts y eso</h1>
         {% for post in posts %}
             <h2>{{post.title}}</h2>
+            <a href="{% url 'detail' post.slug %}">leer mas pero dps lo cambio todo a eso mas ao3 y asi</a>
         {% endfor %}
     </body>
