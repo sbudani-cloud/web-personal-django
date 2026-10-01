@@ -5,6 +5,7 @@ class Post(models.Model):
     slug = models.SlugField()
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add = True)
+    description = models.CharField(max_length=255)
     
     class Meta:
         ordering = ('-created_at',)
@@ -23,3 +24,10 @@ class Comment(models.Model):
     
     def __str__(self):
             return f'{self.name} - {self.post.title}'
+        
+class Tag(models.Model):
+    category = models.CharField(max_length=30)
+    posts = models.ManyToManyField(Post, related_name="tags")
+    
+    def __str__(self):
+        return f'{self.category}'

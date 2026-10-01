@@ -20,14 +20,15 @@
                     <h2><a href="{% url 'detail' post.slug %}">{{post.title}}</a></h2>
                     <span>{{post.created_at|date:'d/m/Y'}}</span>
                     <ul class="tags">
-                        <li>tag1</li>
-                        <li>tag2</li>
+                        {% for tag in post.tags.all %}
+                            <li>{{tag}}</li>
+                        {% endfor %}
                     </ul>
                     <p>
-                        descripicon....
+                        {{post.description}}
                     </p>
                     </div>
                 </article>
             {% endfor %}
         </div>
-    </body>
+    </body>.
