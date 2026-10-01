@@ -87,14 +87,14 @@ h3 {
 
 @font-face {
   font-family: 'PerfLem';
-  src: url('assets/Perfect Lemonade.woff2') format('woff2');
+  src: url('../assets/Perfect Lemonade.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'HandAlph';
-  src: url('assets/Handmade Alphabet.woff2') format('woff2');
+  src: url('../assets/Handmade Alphabet.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -117,7 +117,7 @@ p {
   flex: 1 1 auto;
   min-width: 0;
   height: 100%;
-  background-image: url('assets/banner2.gif');
+  background-image: url('../assets/banner2.gif');
   background-repeat: repeat-x;
   background-position: right center;
   background-size: var(--banner-ancho) var(--banner-alto);
@@ -138,6 +138,9 @@ p {
   color: var(--texto-navbar) !important;
 }
 
+#logo_posta{
+    font-family: var(--font-code);
+}
 .nav-links .nav-link {
   color: var(--texto-navbar) !important;
   font-weight: 500;

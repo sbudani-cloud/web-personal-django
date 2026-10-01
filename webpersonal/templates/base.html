@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Lulii</title>
+    <link rel="icon" type="image/png" href="{% static 'assets/icono.png' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header id="header">
+        <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a href="#inicio" class="navbar-brand logo">Lulii (˶˃ ᵕ ˂˶) ୭ ᵎᵎ 🧁</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-links">
+                    {% block nav_elements %}{% endblock %}
+                </ul>
+
+                <button id="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <script>
+            document.getElementById('anio').textContent = new Date().getFullYear();
+
+            const themeToggle = document.getElementById('theme-toggle');
+            const icon = themeToggle.querySelector('i');
+
+            function aplicarTema(tema) {
+            if (tema === 'oscuro') {
+                document.body.classList.add('dark-mode');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                document.body.classList.remove('dark-mode');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+            }
+
+            const temaGuardado = localStorage.getItem('tema') || 'claro';
+            aplicarTema(temaGuardado);
+
+            themeToggle.addEventListener('click', () => {
+            const nuevoTema = document.body.classList.contains('dark-mode') ? 'claro' : 'oscuro';
+            aplicarTema(nuevoTema);
+            localStorage.setItem('tema', nuevoTema);
+            });
+
+            const formContacto = document.getElementById('form-contacto');
+            formContacto.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('¡Gracias por tu mensaje! Te voy a responder pronto.');
+            formContacto.reset();
+            });
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
