@@ -106,31 +106,6 @@ p {
     font-size: 24px;
 }
 
-.gifs {
-  display: flex;
-  width: 100%;
-  height: var(--banner-alto);
-  overflow: hidden;
-}
-
-.gifs-repetido {
-  flex: 1 1 auto;
-  min-width: 0;
-  height: 100%;
-  background-image: url('../assets/banner2.gif');
-  background-repeat: repeat-x;
-  background-position: right center;
-  background-size: var(--banner-ancho) var(--banner-alto);
-}
-
-.gifs-final {
-  flex: 0 0 var(--banner-ancho);
-  width: var(--banner-ancho);
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 .logo {
   font-family: var(--font-code);
   font-weight: 600;
