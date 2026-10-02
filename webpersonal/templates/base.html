@@ -36,7 +36,12 @@
         </nav>
     </header>
 
-    {% block content %}{% endblock %}
+    <div class="container-fluid gradiente">
+        {% block content %}{% endblock %}
+        <footer id="footer">
+            <p>&copy; <span id="anio"></span> Lucía Budani. Todos los derechos reservados.</p>
+        </footer>
+    </div>
 
     <script>
             document.getElementById('anio').textContent = new Date().getFullYear();

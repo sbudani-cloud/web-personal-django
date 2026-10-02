@@ -1,7 +1,4 @@
 :root {
-    --bg-gradient-center: #ffffff;
-    --bg-gradient-border: #ffc5dd;
-
     --color-titulo: #f14fa0;
 
     --color-titulo-posts: #f053a1;
@@ -13,18 +10,9 @@
 
     --sombra: #06f562;
 
-    --texto-navbar: #ca0062;
-    --navbar-bg: #ffe8f2;
-    --navbar-border: #ffffff;
-    --font-code: "Space Grotesk", monospace;
-
     --theme-toggle-color: #f8cfe3;
     --theme-toggle-border: #f171b1;
 
-}
-
-.gradiente {
-    background: radial-gradient(var(--bg-gradient-center), var(--bg-gradient-border));
 }
 
 h1 {
@@ -36,7 +24,6 @@ h1 {
     border-bottom: 4px solid var(--border-shadow);
     border-right: 4px solid var(--border-shadow);
     border-radius: 15px;
-    overflow: hidden;
     margin: 2rem;
 }
 
@@ -46,6 +33,10 @@ h1 {
 }
 
 .proyecto-body { padding: 1.4rem; }
+
+.proyecto-body p {
+    overflow-wrap: anywhere;
+}
 
 .tags {
     list-style: none;
@@ -71,61 +62,7 @@ h1 {
 }
 
 .titulopost:hover {
-    -webkit-text-stroke: 1px #f38abf;
-}
-
-.nav-links .nav-link {
-    color: var(--texto-navbar) !important;
-    font-weight: 500;
-    padding: 0.5rem 1rem !important;
-    position: relative;
-}
-
-#navbar {
-    background-color: var(--navbar-bg);
-    border-bottom: 2px solid var(--navbar-border);
-    padding: 0.9rem 0;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-body.dark-mode .navbar-toggler-icon {
-    filter: invert(1);
-}
-
-#theme-toggle {
-    border: 1px solid var(--theme-toggle-border);
-    background-color: var(--theme-toggle-color);
-    color: var(--text);
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.3s ease;
-}
-
-#theme-toggle:hover { transform: rotate(15deg); }
-
-.nav-links .nav-link:hover {
-    animation: saltito 0.3s ease;
-}
-
-@keyframes saltito {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-6px);
-    }
-    70% {
-        transform: translateY(-2px);
-    }
-}
-
-.logo {
-    font-family: var(--font-code);
-    font-weight: 600;
-    font-size: 1.15rem;
-    color: var(--texto-navbar) !important;
+    -webkit-text-stroke: 1px #fb95b5;
 }
 
 p {

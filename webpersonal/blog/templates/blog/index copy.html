@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang = "es">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <title>Lulii</title>
+        <link rel="icon" type="image/png" href="">
+
+        <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+    </head>
+    <body>
+        <header id="header">
+            <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a href="http://localhost:8000/blog/" class="navbar-brand logo">Lulii (˶˃ ᵕ ˂˶) ୭ ᵎᵎ 🧁</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-links">
+                    <li class="nav-item"><a class="nav-link" href="http://localhost:8000/portfolio/">Porfolio</a></li>
+                </ul>
+
+                <button id="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                </div>
+            </div>
+            </nav>
+        </header>
+
+
+        <div class='container-fluid gradiente'>
+            <p>.</p>
+            <p>.</p>
+            <h1>aca estan mis posts y eso</h1>
+            {% for post in posts %}
+                <article class="proyecto-card">
+                    <div class="proyecto-body">
+                    <h2><a class = 'titulopost' href="{% url 'blog:detail' post.slug %}">{{post.title}}</a></h2>
+                    <span>{{post.created_at|date:'d/m/Y'}}</span>
+                    <ul class="tags">
+                        {% for tag in post.tags.all %}
+                            <li>{{tag}}</li>
+                        {% endfor %}
+                    </ul>
+                    <p>
+                        {{post.description}}
+                    </p>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </body>.

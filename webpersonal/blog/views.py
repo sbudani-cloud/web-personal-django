@@ -20,7 +20,7 @@ def detail(request, slug):
             comment.post = post
             comment.save()
             
-            return redirect('detail', slug=slug)
+            return redirect('blog:detail', slug=slug)
     
     else:
         form = CommentForm()

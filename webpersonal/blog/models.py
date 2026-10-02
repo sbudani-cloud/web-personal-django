@@ -1,11 +1,11 @@
 from django.db import models
 
 class Post(models.Model):
-    title = models.CharField(max_length = 100)
+    title = models.CharField(max_length = 255)
     slug = models.SlugField()
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add = True)
-    description = models.CharField(max_length=255)
+    description = models.CharField(max_length=1250)
     
     class Meta:
         ordering = ('-created_at',)

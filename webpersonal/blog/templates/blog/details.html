@@ -21,9 +21,9 @@
 
         <hr>
         {% for comment in post.comments.all %}
-            <div>
+            <div class="container">
                 <h3>{{comment.name}} @ Hace {{comment.created_at|timesince}}</h3>
-                <p>{{comment.content}}</p>
+                <p>{{comment.content|linebreaks}}</p>
             </div>
         {% empty %}
             <div>
