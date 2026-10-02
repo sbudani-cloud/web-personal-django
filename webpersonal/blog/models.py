@@ -26,7 +26,7 @@ class Comment(models.Model):
             return f'{self.name} - {self.post.title}'
         
 class Tag(models.Model):
-    category = models.CharField(max_length=30)
+    category = models.CharField(max_length=60)
     posts = models.ManyToManyField(Post, related_name="tags")
     
     def __str__(self):
