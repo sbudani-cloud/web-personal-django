@@ -68,7 +68,7 @@ h3 {
   flex: 1 1 auto;
   min-width: 0;
   height: 100%;
-  background-image: url('assets/banner2.gif');
+  background-image: url('../assets/banner2.gif');
   background-repeat: repeat-x;
   background-position: right center;
   background-size: var(--banner-ancho) var(--banner-alto);
