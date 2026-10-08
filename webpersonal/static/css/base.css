@@ -31,7 +31,7 @@ body.dark-mode {
 }
 
 .gradiente {
-    background: radial-gradient(var(--bg-gradient-center), var(--bg-gradient-border));
+    background: radial-gradient(var(--bg-gradient-center), var(--bg-gradient-border))!important;
 }
 
 @font-face {

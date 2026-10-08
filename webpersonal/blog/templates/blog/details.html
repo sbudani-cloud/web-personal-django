@@ -1,14 +1,24 @@
-{% block title %}{{post.title}}{% endblock %}
+{% extends "base.html" %}
+{% load static %}
 
+    {% block extra_css %}
+            <link rel="stylesheet" href="{% static 'blog/css/details.css' %}">
+    {% endblock %}
+
+{% block title %}{{post.title}}{% endblock %}
 {% block content %}
+    <p>.</p>
+    <p>.</p>
     <h1>{{post.title}}</h1>
 
     <span>{{post.created_at}}</span>
 
     <div>
-        <br> <!-- dps cambio pq esta mal poner un br asi noma -->
+        
         {{post.content|linebreaks}}
     </div>
+
+    <a class ="volver" href="{% url 'blog:index' %}">╰⪼ Volver</a>
 
     <hr>
 
@@ -16,18 +26,19 @@
         <form method='post' action='.'>
             {% csrf_token %}
             {{form.as_p}}
-            <button>submit</button>
+            <button class="volver">Enviar >⩊<</button>
         </form>
 
         <hr>
         {% for comment in post.comments.all %}
-            <div class="container">
-                <h3>{{comment.name}} @ Hace {{comment.created_at|timesince}}</h3>
+            <div class="container-fluid">
+                <h3 class="usuario-nombre">{{comment.name}} <span class="tiempo-comentario">- Hace {{comment.created_at|timesince}}</span></h3>
+                <hr>
                 <p>{{comment.content|linebreaks}}</p>
             </div>
         {% empty %}
             <div>
-                <p>nonahy comentairos todavia..</p>
+                <p>No hay comentairos todavia... ( ˶°ㅁ°) !!</p>
             </div>
         {% endfor %}
     </div>
