@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
     {% endblock %}
     {% block nav_elements %}
-        <li class="nav-item"><a class="nav-link" href="http://localhost:8000/portfolio/">Porfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'portfolio:index' %}">Porfolio</a></li>
     {% endblock %}
 
     {% block content %}
