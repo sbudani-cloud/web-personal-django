@@ -8,6 +8,7 @@
 {% block title %}{{post.title}}{% endblock %}
 {% block content %}
     <p>.</p>
+    <p>.</p>
     <h1>{{post.title}}</h1>
 
     <span>{{post.created_at}}</span>
@@ -30,7 +31,7 @@
 
         <hr>
         {% for comment in post.comments.all %}
-            <div class="container-fluid">
+            <div class="container-fluid comentarioooo">
                 <h3 class="usuario-nombre">{{comment.name}} <span class="tiempo-comentario">- Hace {{comment.created_at|timesince}}</span></h3>
                 <hr>
                 <p>{{comment.content|linebreaks}}</p>

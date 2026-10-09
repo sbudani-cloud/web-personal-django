@@ -44,9 +44,9 @@ span {
     font-size: 22px;
 }
 
-.container-fluid {
+.comentarioooo {
     border: solid 2px #e972a3;
-    background: radial-gradient(var(--grad-center-comment), var(--grad-border-comment)) ;
+    background: radial-gradient(var(--grad-center-comment), var(--grad-border-comment));
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
