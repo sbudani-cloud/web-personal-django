@@ -4,6 +4,54 @@
 
     --grad-center-comment: #fac2d9;
     --grad-border-comment: #fde9f1;
+
+    --color-span: #eb8ebc;
+
+    --color-borde: #eba2c0;
+    --color-texto-boton: #ee71a1;
+    --color-boton: #f3dfea;
+
+    --color-borde-hover: #e98ab2;
+    --color-texto-boton-hover: #ee5891;
+    --color-boton-hover: #f0cfe1;
+
+    --color-texto-usuario: #e74d8d;
+
+    --color-borde-comentario: #e972a3;
+
+    --color-hr: #e94d8e;
+
+    --color-fondo-form: #fdeff4;
+    --color-texto-form: #d6336c;
+    --color-borde-form: #ec98c2;
+}
+
+body.dark-mode {
+    --color-titulo: #f5cad4;
+    --color-titulo2: #d44e7d;
+
+    --grad-center-comment: #680b32;
+    --grad-border-comment: #d44a74;
+
+    --color-span: #fa8ebb;
+
+    --color-borde: #fc91be;
+    --color-texto-boton: #f5c6d8;
+    --color-boton: #b63661;
+
+    --color-borde-hover: #f86ca6;
+    --color-texto-boton-hover: #f19fbf;
+    --color-boton-hover: #9c214a;
+
+    --color-texto-usuario: #f3b7d1;
+
+    --color-borde-comentario: #f7b5d0;
+
+    --color-hr: #ffcee2;
+
+    --color-fondo-form: #66102a;
+    --color-texto-form: #f5bed1;
+    --color-borde-form: #f8bbd9;
 }
 
 h1 {
@@ -17,28 +65,28 @@ h1 {
 }
 
 span {
-    color: #eb8ebc
+    color: var(--color-span)
 }
 
 .volver {
     text-decoration: none;
     border-radius: 4px;
-    border: 2px solid #eba2c0;
-    color: #ee71a1;
-    background-color: #f3dfea;
+    border: 2px solid var(--color-borde);
+    color: var(--color-texto-boton);
+    background-color: var(--color-boton);
     display: inline-block;
     padding: 5px;
 
 }
 
 .volver:hover {
-    border: 2px solid #e98ab2;
-    color: #ee5891;
-    background-color: #f0cfe1;
+    border: 2px solid var(--color-borde-hover);
+    color: var(--color-texto-boton-hover);
+    background-color: var(--color-boton-hover);
 }
 
 .usuario-nombre {
-    color: #e74d8d;
+    color: var(--color-texto-usuario);
 }
 
 .tiempo-comentario {
@@ -46,7 +94,7 @@ span {
 }
 
 .comentarioooo {
-    border: solid 2px #e972a3;
+    border: solid 2px var(--color-borde-comentario);
     background: radial-gradient(var(--grad-center-comment), var(--grad-border-comment));
     border-radius: 10px;
     margin-top: 10px;
@@ -55,13 +103,13 @@ span {
 }
 
 hr {
-    color: #e94d8e;
+    color: var(--color-hr);
 }
 
 textarea, input[type="text"] {
-    background-color: #fdeff4;
-    color: #d6336c;
-    border: 2px solid #ec98c2;
+    background-color: var(--color-fondo-form);
+    color: var(--color-texto-form);
+    border: 2px solid var(--color-borde-form);
     border-radius: 10px;
     padding: 8px;
     font-family: inherit;
