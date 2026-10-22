@@ -89,3 +89,28 @@ p {
 span {
     color: var(--color-span);
 }
+
+.buscar-btnc {
+    text-decoration: none;
+    border-radius: 4px;
+    border: 2px solid #eba2c0;
+    color: #ee71a1;
+    background-color: #f3dfea;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.buscar-btnc:hover {
+    border: 2px solid #e98ab2;
+    color: #ee5891;
+    background-color: #f0cfe1;
+}
+
+.barra-buscar, input[type="text"] {
+    background-color: #fdeff4;
+    color: #d6336c;
+    border: 2px solid #ec98c2;
+    border-radius: 10px;
+    font-family: 'PerfLem', sans-serif;
+    font-size: 18px;
+}

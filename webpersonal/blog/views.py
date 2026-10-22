@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post
 from .forms import CommentForm
+from django.db.models import Q
 
 # Create your views here.
 def index(request):
@@ -30,4 +31,9 @@ def detail(request, slug):
                 'form': form})
 
 def search_results(request):
-    return render(request, "blog/search_results.html", {})
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        posts= Post.objects.filter(Q(title__contains=searched) | Q(description__contains=searched) | Q(tags__category__contains=searched)) #dps veo como poner los tags
+        return render(request, "blog/search_results.html", {'searched': searched, 'posts' : posts})
+    else:
+        return render(request, "blog/search_results.html", {})
