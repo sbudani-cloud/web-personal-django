@@ -28,3 +28,6 @@ def detail(request, slug):
     return render(request, 'blog/details.html', {
                 'post': post,
                 'form': form})
+
+def search_results(request):
+    return render(request, "blog/search_results.html", {})

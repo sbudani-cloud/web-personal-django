@@ -5,6 +5,12 @@
         <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
     {% endblock %}
     {% block nav_elements %}
+        <form class="d-flex" method=POST action="{% url 'blog:search-results' %}">
+            {% csrf_token %}
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </form>
+
         <li class="nav-item"><a class="nav-link" href="{% url 'portfolio:index' %}">Porfolio</a></li>
     {% endblock %}
 
