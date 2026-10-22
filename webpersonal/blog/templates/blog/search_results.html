@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+    
+    {% block extra_css %}
+        <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+    {% endblock %}
+    {% block nav_elements %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'blog:index' %}">Volver</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'portfolio:index' %}">Porfolio</a></li>
+    {% endblock %}
+
+    {% block content %}
+        <p>.</p>
+        <p>.</p>
+        {% if searched %}
+            <h1>⊹ ࣪ ˖ Resultados de Busqueda.. (˶˃ ⩌ ˂˶)</h1>
+            <span>Buscaste: '{{searched}}'</span>
+
+            {% for post in posts %}
+                <article class="proyecto-card">
+                    <div class="proyecto-body">
+                    <h2><a class = 'titulopost' href="{% url 'blog:detail' post.slug %}">{{post.title}}</a></h2>
+                    <span>{{post.created_at|date:'d/m/Y'}}</span>
+                    <ul class="tags">
+                        {% for tag in post.tags.all %}
+                            <li>{{tag}}</li>
+                        {% endfor %}
+                    </ul>
+                    <p>
+                        {{post.description}}
+                    </p>
+                    </div>
+                </article>
+            {% endfor %}
+        {% else %}
+            <h1>El sistema ha sido HACKEADO🤖</h1>
+        {% endif %}
+        
+    {% endblock %}
