@@ -14,8 +14,12 @@
         <p>.</p>
         {% if searched %}
             <h1>⊹ ࣪ ˖ Resultados de Busqueda.. (˶˃ ⩌ ˂˶)</h1>
-            <span>Buscaste: '{{searched}}'</span>
+            <p><span>Buscaste: '{{searched}}'</span></p>
 
+            <div class="d-flex justify-content-end me-4">
+                <button class="buscar-btnc" >Editar Busqueda</button>
+            </div>
+            <p>Se encontraron {{ posts|length }} resultados</p>
             {% for post in posts %}
                 <article class="proyecto-card">
                     <div class="proyecto-body">

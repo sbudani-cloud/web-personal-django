@@ -33,7 +33,7 @@ def detail(request, slug):
 def search_results(request):
     if request.method == 'POST':
         searched = request.POST['searched']
-        posts= Post.objects.filter(Q(title__contains=searched) | Q(description__contains=searched) | Q(tags__category__contains=searched)) #dps veo como poner los tags
+        posts= Post.objects.filter(Q(title__contains=searched) | Q(description__contains=searched) | Q(tags__category__contains=searched)).distinct()
         return render(request, "blog/search_results.html", {'searched': searched, 'posts' : posts})
     else:
         return render(request, "blog/search_results.html", {})
