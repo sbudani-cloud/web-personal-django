@@ -12,14 +12,75 @@
     {% block content %}
         <p>.</p>
         <p>.</p>
-        {% if searched %}
+        {% if has_filters %}
             <h1>⊹ ࣪ ˖ Resultados de Busqueda.. (˶˃ ⩌ ˂˶)</h1>
-            <p><span>Buscaste: '{{searched}}'</span></p>
+            <p><span>Buscaste: {{ resumen }}</span></p>
 
             <div class="d-flex justify-content-end me-4">
-                <button class="buscar-btnc" >Editar Busqueda</button>
+                <button class="buscar-btnc" data-bs-toggle="modal" data-bs-target="#editarBusqueda">Editar Busqueda</button>
             </div>
-            <p>Se encontraron {{ posts|length }} resultados</p>
+            
+            <div class="modal fade" id="editarBusqueda" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <form id="form-editar" method="get" action="{% url 'blog:search-results' %}">
+                        <div class="modal-header">
+                        <h5 class="modal-title">Editar búsqueda</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                        <label>Cualquier campo</label>
+                        <input type="text" name="searched" value="{{ searched }}" class="form-control mb-2">
+
+                        <label>Título</label>
+                        <input type="text" name="title" value="{{ title }}" class="form-control mb-2">
+
+                        <label>Tag</label>
+                            <input type="text" name="tag" value="{{ tag }}" list="lista-tags"
+                                autocomplete="off" class="form-control mb-2">
+                            <datalist id="lista-tags">
+                                {% for t in all_tags %}
+                                    <option value="{{ t }}">
+                                {% endfor %}
+                            </datalist>
+
+                        <label>Fecha desde</label>
+                        <input type="date" name="date_from" value="{{ date_from }}" class="form-control mb-2">
+
+                        <label>Fecha hasta</label>
+                        <input type="date" name="date_to" value="{{ date_to }}" class="form-control">
+                        </div>
+                        <div class="modal-footer">
+                        <button type="submit" class="buscar-btnc">Buscar</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+            
+            {% if posts|length == 1 %}
+                <p>Se encontró {{ posts|length }} resultados</p>
+            {% else %}
+                <p>Se encontraron {{ posts|length }} resultados</p>
+            {% endif %}
+            <script>
+                const formEditar = document.getElementById('form-editar');
+                const inputTag = formEditar.querySelector('[name="tag"]');
+
+                formEditar.addEventListener('submit', function (e) {
+                    const validos = Array.from(document.querySelectorAll('#lista-tags option'))
+                        .map(o => o.value.toLowerCase());
+                    const valor = inputTag.value.trim().toLowerCase();
+
+                    if (valor && !validos.includes(valor)) {
+                        e.preventDefault();
+                        inputTag.setCustomValidity('Elegí un tag existente de la lista');
+                        inputTag.reportValidity();
+                    }
+                });
+
+                inputTag.addEventListener('input', () => inputTag.setCustomValidity(''));
+            </script>
             {% for post in posts %}
                 <article class="proyecto-card">
                     <div class="proyecto-body">
@@ -39,5 +100,4 @@
         {% else %}
             <h1>El sistema ha sido HACKEADO🤖</h1>
         {% endif %}
-        
     {% endblock %}

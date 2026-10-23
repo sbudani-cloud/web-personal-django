@@ -5,8 +5,7 @@
         <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
     {% endblock %}
     {% block nav_elements %}
-        <form class="d-flex" method=POST action="{% url 'blog:search-results' %}">
-            {% csrf_token %}
+        <form class="d-flex" method="get" action="{% url 'blog:search-results' %}">
             <input class="form-control me-2 barra-buscar" type="search" placeholder="Buscar..." aria-label="Search" name="searched">
             <button class="buscar-btnc" type="submit">Buscar ୭˚. ᵎᵎ</button>
         </form>
