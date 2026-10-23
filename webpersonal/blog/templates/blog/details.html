@@ -32,6 +32,15 @@
         </form>
 
         <hr>
+
+        <div class="d-flex gap-1 justify-content-end me-4">
+            <p id="like-thanks" {% if not liked %}hidden{% endif %}>Gracias por dejar Kudos!</p>
+            <button class="volver" id="like-btn" data-url="{% url 'blog:like_post' post.slug %}" {% if liked %}class="volver-disabled" disabled{% endif %}>
+                <span id="like-icon">{% if liked %}Kudos ♥{% else %}Kudos ♡{% endif %}</span>
+                <span id="like-count">{{ post.likes }}</span>
+            </button>
+        </div>
+    
         {% for comment in post.comments.all %}
             <div class="container-fluid comentarioooo">
                 <h3 class="usuario-nombre">{{comment.name}} <span class="tiempo-comentario">- Hace {{comment.created_at|timesince}}</span></h3>
@@ -44,4 +53,20 @@
             </div>
         {% endfor %}
     </div>
+
+    <script>
+        const btn = document.getElementById('like-btn');
+        btn.addEventListener('click', async () => {
+            if (btn.disabled) return;
+            const res = await fetch(btn.dataset.url, {
+            method: 'POST',
+            headers: {'X-CSRFToken': '{{ csrf_token }}'},
+            });
+            const data = await res.json();
+            document.getElementById('like-count').textContent = data.likes;
+            document.getElementById('like-icon').textContent = 'Kudos ♥';
+            document.getElementById('like-thanks').hidden = false;
+            btn.disabled = true;
+        });
+        </script>
 {% endblock %}

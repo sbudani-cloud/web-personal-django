@@ -78,7 +78,7 @@ span {
     padding: 5px;
 }
 
-.volver:hover {
+.volver:hover, .volver:disabled {
     border: 2px solid var(--color-borde-hover);
     color: var(--color-texto-boton-hover);
     background-color: var(--color-boton-hover);

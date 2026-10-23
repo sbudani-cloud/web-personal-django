@@ -6,6 +6,7 @@ class Post(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add = True)
     description = models.CharField(max_length=1250)
+    likes = models.PositiveIntegerField(default=0)
     
     class Meta:
         ordering = ('-created_at',)

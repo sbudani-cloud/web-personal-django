@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, Tag
 from .forms import CommentForm
-from django.db.models import Q
+from django.db.models import Q, F
+from django.views.decorators.http import require_POST
+from django.http import JsonResponse
 
 # Create your views here.
 def index(request):
@@ -25,10 +27,13 @@ def detail(request, slug):
     
     else:
         form = CommentForm()
-    
+
+    liked = post.pk in request.session.get('liked_posts', [])
+
     return render(request, 'blog/details.html', {
                 'post': post,
-                'form': form})
+                'form': form,
+                'liked': liked,})
 
 def search_results(request):
     if request.GET:
@@ -85,3 +90,16 @@ def search_results(request):
         })
     else:
         return render(request, "blog/search_results.html", {})
+
+@require_POST
+def like_post(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    liked = request.session.get('liked_posts', [])
+
+    if post.pk not in liked:
+        Post.objects.filter(pk=post.pk).update(likes=F('likes') + 1)
+        liked.append(post.pk)
+        request.session['liked_posts'] = liked
+
+    post.refresh_from_db()
+    return JsonResponse({'likes': post.likes, 'liked': True})
