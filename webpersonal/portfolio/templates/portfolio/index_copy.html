@@ -1,129 +1,132 @@
 {% extends "base.html" %}
 {% load static %}
-    
-    {% block extra_css %}
-        <link rel="stylesheet" href="{% static 'portfolio/css/portfolio.css' %}">
-    {% endblock %}
 
-    {% block nav_elements %}
-        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
-        <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'blog:index' %}">Blog</a></li>
-    {% endblock %}
+    {% block nav_elements %}{% endblock %} <!-- sacar esto dps -->
+
     {% block content %} 
-        <section id="inicio" class="hero">
-            <p>.<br>.</p>
-            <div class="gifs" role="img" aria-label="Banner decorativo">
-                <div class="gifs-repetido"></div>
-                <img src="{% static 'portfolio/assets/banner.gif' %}" class="gifs-final" alt="">
-            </div>
-            <div class="container hero-grid">
-                <div class="hero-texto">
-                <h1>⊹ ࣪ ˖ Lucía Budani (˶ˆ꒳ˆ˵)</h1>
-                <p class="hero-descripcion">Bienvenid@ a mi página web!! ⸜(｡˃ ᵕ ˂)⸝♡
-                </p>
+        <div class="row">
+            <div class="col">
+                <div class="cont-diseno-primero">
+                    <h1>プログラミングはアートです！</h1>
                 </div>
-            </div>
-            </section>
-            
-        <section id="sobre-mi" class="seccion">
-            <div class="container">
-                <h2>⋆.˚ Sobre mí ꉂ(˵˃ ᗜ ˂˵)</h2>
-                <div class="sobre-mi-grid">
-                <div class="foto-wrapper">
-                    <img src="{% static 'portfolio/assets/foto-perfil.png' %}" alt="Foto de Lucía Budani" class="foto-perfil">
+                <div class="cont-diseno-segundo d-flex align-items-center gap-2 justify-content-between">
+                    <h2>//₊˚⊹♡ <rainbow>WLC TO MY PAGE</rainbow> <span> — enjoy!!</span></h2>
+                    <img src="{% static 'portfolio/assets/ribbon.png' %}" class="iconcito" alt="Moñito" />
                 </div>
-                <p class="sobre-mi-texto">
-                    Soy Luli, estudiante y desarrolladora en formación, con interés en la programación y el desarrollo web!! ᓚ₍ ^. .^₎<br>
-                    Actualmente cuento con conocimientos en Python y continúo ampliando mis habilidades en tecnologías de desarrollo frontend. Me interesa aprender, crear nuevos proyectos y seguir desarrollando mis conocimientos en el área de la tecnología.
-                </p>
+                <div class="cont-diseno-tercero d-flex flex-wrap gap-3">
+                    <h3 class="mb-0"><a href="https://github.com/sbudani-cloud" target="_blank">GITHUB</a></h3>
+                    <h3 class="mb-0"><a href="https://www.instagram.com/leomessi/?hl=es" target="_blank">IG</a></h3>
+                    <h3 class="mb-0"><a href="mailto:lulubaezbudani@gmail.com" target="_blank">MAIL</a></h3>
                 </div>
-            </div>
-            </section>
-
-    <section id="proyectos" class="seccion seccion-alt">
-        <div class="container">
-            <h2>˚ ༘ ೀ⋆｡˚ Proyectos ૮ ྀིᴗ͈ . ᴗ͈ ྀིა</h2>
-            <div class="proyectos-grid">
-
-            <article class="proyecto-card">
-                <img src="{% static 'portfolio/assets/proyecto1.png' %}" alt="Captura del Proyecto 1">
-                <div class="proyecto-body">
-                <h3>Stray Tower Defense</h3>
-                <p>
-                    Juego de tipo Tower Defense realizado con mi compañero Dante Rodriguez.
-                </p>
-                <ul class="tecnologias">
-                    <li>Python</li>
-                    <li>Pygame</li>
-                </ul>
-                <div class="proyecto-links">
-                    <a href="https://github.com/DanteRodriguezHola/Tower-Defense" target="_blank" rel="noopener noreferrer">Ir al Repositorio</a>
-                </div>
-                </div>
-            </article>
-
-            <article class="proyecto-card">
-                <img src="{% static 'portfolio/assets/proyecto2.png' %}" alt="Captura del Proyecto 2">
-                <div class="proyecto-body">
-                <h3>Luliify</h3>
-                <p>
-                    Reproductor de música básico creado con la libreria TKinter.
-                </p>
-                <ul class="tecnologias">
-                    <li>Python</li>
-                    <li>Tkinter</li>
-                </ul>
-                <div class="proyecto-links">
-                    <a href="https://github.com/sbudani-cloud/tp_1" target="_blank" rel="noopener noreferrer">Ir al Repositorio</a>
-                </div>
-                </div>
-            </article>
             </div>
         </div>
-        </section>
-        
-    <section id="habilidades" class="seccion">
-        <div class="container">
-            <h2>₊⊹ Habilidades Técnicas (˶ᵔ ᵕ ᵔ˶)</h2>
-            <ul class="habilidades-lista">
-            <li><i class="fa-brands fa-html5"></i><span>HTML</span></li>
-            <li><i class="fa-brands fa-css3-alt"></i><span>CSS</span></li>
-            <li><i class="fa-brands fa-python"></i><span>Python</span></li>
-            <li><i class="fa-brands fa-git-alt"></i><span>Git</span></li>
-            <li><i class="fa-brands fa-github"></i><span>GitHub</span></li>
-            </ul>
-        </div>
-        </section>
-    
-
-        <section id="contacto" class="seccion seccion-alt">
-            <div class="container">
-                <h2>୭ ˚. ᵎᵎ Contacto ˗ˏˋ ꒰ ✉︎ ꒱ ˎˊ˗</h2>
-                <div class="contacto-grid">
-                <form id="form-contacto" class="formulario-contacto">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" required>
-
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-
-                    <button type="submit" class="btn btn-primario">Enviar</button>
-                </form>
-
-                <div class="redes-panel">
-                    <p>O encontrame en:</p>
-                    <a href="mailto:sbudani@alumno.huergo.edu.ar"><i class="fa-solid fa-envelope"></i> sbudani@alumno.huergo.edu.ar</a>
-                    <a href="https://github.com/sbudani-cloud" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
-                    <a href="https://www.instagram.com/leomessi/?hl=es" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <div class="probando mt-1">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="{% static 'portfolio/assets/banner.jpg' %}" class="bannercito" alt="Banner Madoka Arcoiris" />
                 </div>
+                <div class="col-lg-6">
+                    <p><rainbow>holii¡! (˶ˆᗜˆ˵)</rainbow> me llamo Lucía Budani, pero prefiero que me llamen <strong>Lulii</strong>, soy una programadora de 17 años, estudiante del I.I.L.A.H, y <span>(por ahora)</span> se programar en Python, HTML y CSS¡!</p>
                 </div>
             </div>
-            </section>
+        </div>
+        <div class="row gx-1 mt-1 position-relative">
+            <img src="{% static 'portfolio/assets/corazon.png' %}" class="detallitos" alt="Dazai en un Corazón" />
+            <audio id="hoverSfx" src="{% static 'portfolio/assets/sfx_miau.mp3' %}" preload="auto"></audio>
+            <div class="col-3 col-lg-2">
+                <div class="cont-diseno-violeta h-100">
+                    <picture>
+                        <source media="(max-width: 575px)" srcset="assets/vertical_banner.jpg">
+                        <source media="(max-width: 991px)" srcset="assets/vertical_banner_tablet.jpg">
+                        <img src="{% static 'portfolio/assets/vertical_banner_tablet.jpg' %}" class="v_bannercito" alt="Banner Vertical" />
+                    </picture>
+                </div>
+            </div>
+            <div class="col-9 col-lg-10">
+                <div class="d-flex flex-column gap-1">
+                    <div class="cont-diseno-rosita">
+                        <h1 class="rosita">PR♡YECTOZZ .𖥔 ݁ ˖ִ📝༄˖°.</h1>
+                    </div>
+                    <div class="probando">
+                        <p>𝓹ara ver los repositorios de github de algunos de <rainbow>mis proyectos</rainbow>, toca los <strong>botoncitos</strong> de abajoop (˶ᵔ ᵕ ᵔ˶)</p>
+                    </div>
+                    <div class="row g-1">
+                        <div class="col-4"><a href="https://github.com/sbudani-cloud/tp_1" target="_blank"><img src="{% static 'portfolio/assets/proyecto1.jpg' %}" class="botoncito" alt="Link a Luliify" /></a></div>
+                        <div class="col-4"><a href="https://github.com/DanteRodriguezHola/Tower-Defense" target="_blank"><img src="{% static 'portfolio/assets/proyecto2.jpg' %}" class="botoncito" alt="Link a Stray Tower Defense" /></a></div>
+                        <div class="col-4"><a href="https://github.com/sbudani-cloud/web-personal-django" target="_blank"><img src="{% static 'portfolio/assets/proyecto3.jpg' %}" class="botoncito" alt="Link a Web Personal con Django" /></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row gx-1 align-items-center position-relative">
+            <img src="{% static 'portfolio/assets/estrella.png' %}" class="detallitos2" alt="Chuuya en una Estrella" />
+            <audio id="hoverSfx" src="assets/sfx_miau.mp3" preload="auto"></audio>
+            <div class="col-4 col-lg-3 gy-1">
+                <img src="{% static 'portfolio/assets/mp3player.png' %}" id="reproductor" class="v_bannercito" alt="Reproductor de Música" />
+                <audio id="musica" src="{% static 'portfolio/assets/cancion.mp3' %}" loop></audio>
+            </div>
+            <div class="col-8 col-lg-9 gy-1">
+                <div class="probando">
+                    <div class="cont-diseno-primero">
+                        <h1 id="estadoMusica">再生 CLICK THE MP3 TO PLAY MUSIC! ꉂ(˵˃ ᗜ ˂˵)</h1>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 justify-content-between">
+                        <p><strong>MESMERIZER</strong> <rainbow>˖ ݁♬⋆</rainbow> 32KI</p>
+                        <img src="{% static 'portfolio/assets/musica.gif' %}" class="musica-gif" alt="GIF Notas Musicales" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row gx-1 mt-1">
+            <div class="col">
+                <img src="{% static 'portfolio/assets/ticket1.png' %}" class="v_bannercito" alt="Ticket 1" />
+            </div>
+            <div class="col">
+                <img src="{% static 'portfolio/assets/ticket2.png' %}" class="v_bannercito" alt="Ticket 2" />
+            </div>
+            <div class="col">
+                <img src="{% static 'portfolio/assets/ticket3.png' %}" class="v_bannercito" alt="Ticket 3" />
+            </div>
+            <div class="col">
+                <img src="{% static 'portfolio/assets/ticket4.png' %}" class="v_bannercito" alt="Ticket 4" />
+            </div>
+        </div>
+
+        <script>
+            const musica = document.getElementById('musica');
+            const reproductor = document.getElementById('reproductor');
+            const estadoMusica = document.getElementById('estadoMusica');
+
+            reproductor.addEventListener('click', () => {
+                if (musica.paused) {
+                    musica.play();
+                    estadoMusica.textContent = '再生 NOW PLAYING...';
+                } else {
+                    musica.pause();
+                    estadoMusica.textContent = '再生 PAUSED';
+                }
+
+                reproductor.src = musica.paused ? "{% static 'portfolio/assets/mp3player.png' %}" : "{% static 'portfolio/assets/mp3player_on.png' %}";
+            });
+        </script>
+        <script>
+            const botones = document.querySelectorAll(".detallitos, .detallitos2");
+            const sfx = document.getElementById("hoverSfx");
+
+            botones.forEach(boton => {
+                boton.addEventListener("click", () => {
+                    sfx.currentTime = 0;
+                    sfx.play();
+                });
+            });
+        </script>
+        <script>
+            document.querySelectorAll(".detallitos, .detallitos2").forEach(elemento => {
+            elemento.addEventListener("click", () => {
+                elemento.classList.remove("vibrando");
+                void elemento.offsetWidth;
+                elemento.classList.add("vibrando");
+            });
+        });
+        </script>
     {% endblock %}   
