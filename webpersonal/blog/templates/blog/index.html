@@ -5,34 +5,55 @@
         <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
     {% endblock %}
     {% block nav_elements %}
-        <form class="d-flex" method="get" action="{% url 'blog:search-results' %}">
+        <form class="d-flex me-3" method="get" action="{% url 'blog:search-results' %}">
             <input class="form-control me-2 barra-buscar" type="search" placeholder="Buscar..." aria-label="Search" name="searched">
             <button class="buscar-btnc" type="submit">Buscar ୭˚. ᵎᵎ</button>
         </form>
-
-        <li class="nav-item"><a class="nav-link" href="{% url 'portfolio:index' %}">Porfolio</a></li>
     {% endblock %}
 
     {% block content %}
-        <h1>Bienvenido a mi blog!! (˶ˆᗜˆ˵)</h1>
-        {% for post in posts %}
-            <article class="proyecto-card">
-                <div class="proyecto-body">
-                <h2><a class = 'titulopost' href="{% url 'blog:detail' post.slug %}">{{post.title}}</a></h2>
-                
-                <ul class="tags">
-                    {% for tag in post.tags.all %}
-                        <li>{{tag}}</li>
+        <div class="row">
+            <div class="col">
+                <div class="cont-diseno-primero">
+                    <h1>ℬienvenid@ a mi blog!</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row g-1 mt-1">
+            <div class="d-none d-lg-block col-3">
+                <div class="probando">
+                    <div class="cont-diseno-rosita"><h1>Lalalala</h1></div>
+                    <p><rainbow>lado 1</rainbow> holaholahola</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="contenedor-posts">
+                    {% for post in posts %}
+                        <article class="proyecto-card">
+                            <div class="proyecto-body">
+                            <h2><a class = 'titulopost' href="{% url 'blog:detail' post.slug %}"><rainbow>{{post.title}}</rainbow></a></h2>
+                            
+                            <ul class="tags">
+                                {% for tag in post.tags.all %}
+                                    <li>{{tag}}</li>
+                                {% endfor %}
+                            </ul>
+                            <p>
+                                {{post.description}}
+                            </p>
+                            <div class="d-flex gap-4 justify-content-end me-4">
+                                <span>{{post.created_at|date:'d/m/Y'}}</span>
+                                <span>Kudos: {{post.likes}}</span>
+                            </div>
+                            </div>
+                        </article>
                     {% endfor %}
-                </ul>
-                <p>
-                    {{post.description}}
-                </p>
-                <div class="d-flex gap-4 justify-content-end me-4">
-                    <span>{{post.created_at|date:'d/m/Y'}}</span>
-                    <span>Kudos: {{post.likes}}</span>
                 </div>
+            </div>
+            <div class="d-none d-lg-block col-3">
+                <div class="probando">
+                    <h1>lado 2</h1>
                 </div>
-            </article>
-        {% endfor %}
+            </div>
+        </div>        
     {% endblock %} 

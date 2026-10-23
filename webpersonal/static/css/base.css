@@ -44,6 +44,13 @@ body.dark-mode {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Consola';
+  src: url('../assets/console.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .logo {
   font-family: var(--font-code);
   font-weight: 600;
@@ -326,4 +333,88 @@ footer {
 
 .texto-footer {
     color: #c766a6;
+}
+
+.contenedor-posts {
+    background-color: #ffeaf3;
+    border: 2px solid #ffa8ca;
+    border-radius: 10px;
+    height: clamp(650px, 15vw, 100px);
+    overflow-y: auto;
+    scrollbar-color: #fc8ed7;
+}
+
+
+
+
+
+.proyecto-card {
+    border: 2px solid #630929;
+    border-bottom: 4px solid #85c1ef;
+    border-right: 4px solid #a9eaaf;
+    border-radius: 15px;
+    margin: 2rem;
+}
+
+.proyecto-card:hover {
+    animation: saltito 0.3s ease;
+}
+
+.proyecto-body {
+    padding: 1.4rem;
+}
+
+.proyecto-body p {
+    overflow-wrap: anywhere;
+}
+
+.tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0.8rem 0;
+}
+
+.tags li {
+    font-size: 0.8rem;
+    background-color: #9973e6;
+    color: #ff0a0a;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+}
+
+.titulopost {
+    font-size: clamp(10px, 4vw, 24px);
+    text-decoration: underline;
+}
+
+.titulopost:hover {
+    -webkit-text-stroke: 1px pink;
+}
+
+.buscar-btnc {
+    text-decoration: none;
+    border-radius: 4px;
+    border: 2px solid #eba2c0;
+    color: #ee71a1;
+    background-color: #f3dfea;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.buscar-btnc:hover {
+    border: 2px solid #e98ab2;
+    color: #ee5891;
+    background-color: #f0cfe1;
+}
+
+.barra-buscar, input[type="text"] {
+    background-color: #fdeff4;
+    color: #d6336c;
+    border: 2px solid #ec98c2;
+    border-radius: 10px;
+    font-family: 'Consola', sans-serif;
+    font-size: 14px;
 }
