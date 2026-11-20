@@ -9,7 +9,7 @@
   
     --border: #b30956;
 
-    --navbar-bg: #ffe8f2;
+    --navbar-bg: #ffdbee;
     --navbar-border: #ffffff;
 }
 
@@ -66,11 +66,33 @@ body.dark-mode {
 }
 
 #navbar {
-  background-color: var(--navbar-bg);
-  border-bottom: 2px solid var(--navbar-border);
+  background: linear-gradient(0deg,var(--navbar-bg) 0%, #d2e0f7 60%);
   padding: 0.9rem 0;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
+
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  left: -2px; /* Compensa el grosor del borde izquierdo */
+  right: -2px; /* Compensa el grosor del borde derecho */
+  bottom: -14px; /* Radio total (12px + 2px de borde) */
+  height: 14px;
+  
+  background-image: radial-gradient(
+    circle at 12px 0,
+    var(--navbar-bg) 10px,
+    var(--navbar-border) 10.5px,
+    var(--navbar-border) 12px,
+    transparent 12.5px
+  );
+  background-size: 24px 14px;
+  background-repeat: repeat-x;
+}
+
+
+
 
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
   outline: 2px solid var(--accent);
@@ -349,9 +371,9 @@ footer {
 
 
 .proyecto-card {
-    border: 2px solid #630929;
-    border-bottom: 4px solid #85c1ef;
-    border-right: 4px solid #a9eaaf;
+    border: 2px solid #ed8cae;
+    border-right: 4px solid #d67697;
+    border-bottom: 4px solid #d67697;
     border-radius: 15px;
     margin: 2rem;
 }
@@ -379,8 +401,9 @@ footer {
 
 .tags li {
     font-size: 0.8rem;
-    background-color: #9973e6;
-    color: #ff0a0a;
+    background-image: url('../assets/bg_footer.jpg');
+    color: #cc547a;
+    font-weight: bold;
     padding: 0.25rem 0.6rem;
     border-radius: 999px;
 }
@@ -417,4 +440,25 @@ footer {
     border-radius: 10px;
     font-family: 'Consola', sans-serif;
     font-size: 14px;
+}
+
+marquee {
+    white-space: nowrap;
+}
+
+marquee img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.blinkie {
+    height: 25px;
+}
+
+.stampj {
+    height: 60px;
+}
+
+.post-info {
+    color: #db759a;
 }

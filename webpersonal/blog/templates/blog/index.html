@@ -20,20 +20,40 @@
         <div class="row g-1 mt-1">
             <div class="d-none d-lg-block col-3">
                 <div class="row g-1 mt-1">
-                    <div class="probando">
-                        <div class="cont-diseno-rosita"><h1>Lalalala</h1></div>
-                        <p><rainbow>lado 1</rainbow> holaholahola</p>
+                    <div class="probando" style="height: 56vh;">
+                        <div class="cont-diseno-rosita"><h1>かわいいね (˵˃ ᗜ ˂˵)</h1></div>
+                        <p>𝒶cá están mis <rainbow>posts</rainbow>!! podés interactuar comentando y dando kudos ( ≧ᗜ≦)!</p>
+                        <p>⩩﹔ 𝓮spero que disfrutes mi página y te <rainbow>inspire</rainbow> a crear tu propio arte! ♡⃛</p>
+
+                        <p><rainbow>୨୧ ────────────────</rainbow></p>
+                        <p>◞𝒒uote〢:</p>
+                        <p>☀︎ on sunny days i go out walking<br>𓂃 i end up on a tree-lined street<br>i look up at the gaps of sunlight ✧<br>♡ i miss you <rainbow>more than anything</rainbow></p>
+                        <p>⋆｡°✩ i don't need the world to see<br>that <rainbow>i've been the best i can be</rainbow>, but<br>𓏲 ๋࣭ i don't think i could stand to be<br>where you don't see me ♡</p>
+                        <p><rainbow>──────────────── ୨୧</rainbow></p>
                     </div>
                 </div>
                 <div class="row g-1 mt-1">
                     <div class="probando">
                         <div class="cont-diseno-rosita"><h1>𓏵‧₊˚ ┊ BLINKIES & STAMPS</h1></div>
                         <marquee>
-                            <img src="{% static 'blog/assets/b.gif' %}">
-                            <img src="{% static 'blog/assets/b2.gif' %}">
-                            <img src="{% static 'blog/assets/b3.gif' %}">
-                            <img src="{% static 'blog/assets/b4.gif' %}">
-                            <img src="{% static 'blog/assets/b5.gif' %}">
+                            <img src="{% static 'blog/assets/b.gif' %}" class="blinkie">
+                            <img src="{% static 'blog/assets/b2.gif' %}" class="blinkie">
+                            <img src="{% static 'blog/assets/b3.gif' %}" class="blinkie">
+                            <img src="{% static 'blog/assets/b4.gif' %}" class="blinkie">
+                            <img src="{% static 'blog/assets/b5.gif' %}" class="blinkie">
+                            <img src="{% static 'blog/assets/b6.gif' %}" class="blinkie">
+                            <img src="{% static 'blog/assets/b7.gif' %}" class="blinkie">
+                            <img src="{% static 'blog/assets/b8.gif' %}" class="blinkie">
+                        </marquee>
+                        <marquee direction="right">
+                            <img src="{% static 'blog/assets/s.gif' %}" class="stampj">
+                            <img src="{% static 'blog/assets/s2.gif' %}" class="stampj">
+                            <img src="{% static 'blog/assets/s3.gif' %}" class="stampj">
+                            <img src="{% static 'blog/assets/s4.gif' %}" class="stampj">
+                            <img src="{% static 'blog/assets/s5.gif' %}" class="stampj">
+                            <img src="{% static 'blog/assets/s6.png' %}" class="stampj">
+                            <img src="{% static 'blog/assets/s7.gif' %}" class="stampj">
+                            <img src="{% static 'blog/assets/s8.png' %}" class="stampj">
                         </marquee>
                     </div>
                 </div>
@@ -54,8 +74,8 @@
                                 {{post.description}}
                             </p>
                             <div class="d-flex gap-4 justify-content-end me-4">
-                                <span>{{post.created_at|date:'d/m/Y'}}</span>
-                                <span>Kudos: {{post.likes}}</span>
+                                <span class="post-info">{{post.created_at|date:'d/m/Y'}}</span>
+                                <span class="post-info">Kudos: {{post.likes}}</span>
                             </div>
                             </div>
                         </article>
