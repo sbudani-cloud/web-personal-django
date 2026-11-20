@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
     
-    {% block extra_css %}
-        <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
-    {% endblock %}
+    
     {% block nav_elements %}
         <form class="d-flex me-3" method="get" action="{% url 'blog:search-results' %}">
             <input class="form-control me-2 barra-buscar" type="search" placeholder="Buscar..." aria-label="Search" name="searched">
@@ -15,15 +13,29 @@
         <div class="row">
             <div class="col">
                 <div class="cont-diseno-primero">
-                    <h1>ℬienvenid@ a mi blog!</h1>
+                    <h1>ℬIENVENID@ A MI BLOG! ˚.🍥🐇 ᵎᵎ</h1>
                 </div>
             </div>
         </div>
         <div class="row g-1 mt-1">
             <div class="d-none d-lg-block col-3">
-                <div class="probando">
-                    <div class="cont-diseno-rosita"><h1>Lalalala</h1></div>
-                    <p><rainbow>lado 1</rainbow> holaholahola</p>
+                <div class="row g-1 mt-1">
+                    <div class="probando">
+                        <div class="cont-diseno-rosita"><h1>Lalalala</h1></div>
+                        <p><rainbow>lado 1</rainbow> holaholahola</p>
+                    </div>
+                </div>
+                <div class="row g-1 mt-1">
+                    <div class="probando">
+                        <div class="cont-diseno-rosita"><h1>𓏵‧₊˚ ┊ BLINKIES & STAMPS</h1></div>
+                        <marquee>
+                            <img src="{% static 'blog/assets/b.gif' %}">
+                            <img src="{% static 'blog/assets/b2.gif' %}">
+                            <img src="{% static 'blog/assets/b3.gif' %}">
+                            <img src="{% static 'blog/assets/b4.gif' %}">
+                            <img src="{% static 'blog/assets/b5.gif' %}">
+                        </marquee>
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-lg-6">

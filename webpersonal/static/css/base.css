@@ -339,7 +339,7 @@ footer {
     background-color: #ffeaf3;
     border: 2px solid #ffa8ca;
     border-radius: 10px;
-    height: clamp(650px, 15vw, 100px);
+    height: 75vh;
     overflow-y: auto;
     scrollbar-color: #fc8ed7;
 }
