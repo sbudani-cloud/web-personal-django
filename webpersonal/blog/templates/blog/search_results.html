@@ -16,17 +16,19 @@
             </div>
 
             <div class="cont-diseno-segundo">
-                <div class="d-flex align-items-center gap-2 justify-content-between">
-                    <p><span style="color: #525252;">Buscaste: {{ resumen }}</span></p>
-                    <button class="boton-blog" data-bs-toggle="modal" data-bs-target="#editarBusqueda">Editar Busqueda</button>
-                </div>
+                <p><span style="color: #3d3d3d;">Buscaste: {{ resumen }}</span></p>
             </div>
+
             <div class="cont-diseno-tercero mb-1">
-                {% if posts|length == 1 %}
-                    <p style="color: #fb7fb5;">Se encontró {{ posts|length }} resultado</p>
-                {% else %}
-                    <p style="color: #fb7fb5;">Se encontraron {{ posts|length }} resultados</p>
-                {% endif %}
+                <div class="d-flex align-items-center gap-2 justify-content-between">
+                    {% if posts|length == 1 %}
+                        <p style="color: #fb7fb5;">Se encontró {{ posts|length }} resultado</p>
+                    {% else %}
+                        <p style="color: #fb7fb5;">Se encontraron {{ posts|length }} resultados</p>
+                    {% endif %}
+
+                    <button class="buscar-btnc" data-bs-toggle="modal" data-bs-target="#editarBusqueda">Editar Busqueda</button>
+                </div>
             </div>
             
             <div class="modal fade" id="editarBusqueda" tabindex="-1" aria-hidden="true">

@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col">
             <div class="cont-diseno-primero">
-                <h1 style="font-size: clamp(20px, 2vw, 32px);">˖ ֹ੭୧ {{post.title}} ⊹ ࣪ ⑅</h1>
+                <h1>˖ ֹ੭୧ {{post.title}} ⊹ ࣪ ⑅</h1>
             </div>
             <div class="cont-diseno-segundo">
                 <span style="color: #7c7c7c;">{{post.created_at}}</span>
@@ -26,6 +26,7 @@
     </div>
     
     <div class="probando mt-1" style="background-color: #ffebf4; border-color: #f39fc4;">
+        <div class="cont-diseno-rosita mb-2"><h1>⁺˖ ⸝⸝ 𝓬omentá algo!! (˶˃ ∇ ˂˶)</h1></div>
         <form method='post' action='.'>
             {% csrf_token %}
             {{form.as_p}}
