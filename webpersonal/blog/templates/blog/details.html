@@ -34,7 +34,7 @@
     </div>
 
     <div class="cont-diseno-violeta mt-1">
-        <div class="d-flex gap-1 justify-content-end me-4">
+        <div class="d-flex gap-1 justify-content-end align-items-center me-4">
             <p id="like-thanks" {% if not liked %}hidden{% endif %}>⊹ ࣪ ˖ Gracias por dejar Kudos! ₊˚⊹♡</p>
             <button class="boton-blog" id="like-btn" data-url="{% url 'blog:like_post' post.slug %}" {% if liked %}disabled{% endif %}>
                 <span id="like-icon">{% if liked %}Kudos ♥{% else %}Kudos ♡{% endif %}</span>
@@ -44,13 +44,13 @@
 
         {% for comment in post.comments.all %}
             <div class="container-fluid caja-comentarios">
-                <h3 class="usuario-nombre">{{comment.name}} <span class="tiempo-comentario">- Hace {{comment.created_at|timesince}}</span></h3>
+                <p class="usuario-nombre">{{comment.name}} <span class="post-info">- Hace {{comment.created_at|timesince}}</span></p>
                 <hr>
                 <p>{{comment.content|linebreaks}}</p>
             </div>
         {% empty %}
             <div>
-                <p>No hay comentairos todavia... ( ˶°ㅁ°) !!</p>
+                <p style="font-weight: bold; color:#974cbd;">No hay comentairos todavia... ( ˶°ㅁ°) !!</p>
             </div>
         {% endfor %}
     </div>

@@ -10,14 +10,23 @@
     {% endblock %}
 
     {% block content %}
-        <p>.</p>
-        <p>.</p>
         {% if has_filters %}
-            <h1>⊹ ࣪ ˖ Resultados de Busqueda.. (˶˃ ⩌ ˂˶)</h1>
-            <p><span>Buscaste: {{ resumen }}</span></p>
+            <div class="cont-diseno-primero">
+                <h1>⊹ ࣪ ˖ Resultados de Busqueda.. (˶˃ ⩌ ˂˶)</h1>
+            </div>
 
-            <div class="d-flex justify-content-end me-4">
-                <button class="buscar-btnc" data-bs-toggle="modal" data-bs-target="#editarBusqueda">Editar Busqueda</button>
+            <div class="cont-diseno-segundo">
+                <div class="d-flex align-items-center gap-2 justify-content-between">
+                    <p><span style="color: #525252;">Buscaste: {{ resumen }}</span></p>
+                    <button class="boton-blog" data-bs-toggle="modal" data-bs-target="#editarBusqueda">Editar Busqueda</button>
+                </div>
+            </div>
+            <div class="cont-diseno-tercero mb-1">
+                {% if posts|length == 1 %}
+                    <p style="color: #fb7fb5;">Se encontró {{ posts|length }} resultado</p>
+                {% else %}
+                    <p style="color: #fb7fb5;">Se encontraron {{ posts|length }} resultados</p>
+                {% endif %}
             </div>
             
             <div class="modal fade" id="editarBusqueda" tabindex="-1" aria-hidden="true">
@@ -58,11 +67,6 @@
                 </div>
             </div>
             
-            {% if posts|length == 1 %}
-                <p>Se encontró {{ posts|length }} resultado</p>
-            {% else %}
-                <p>Se encontraron {{ posts|length }} resultados</p>
-            {% endif %}
             <script>
                 const formEditar = document.getElementById('form-editar');
                 const inputTag = formEditar.querySelector('[name="tag"]');
@@ -81,23 +85,27 @@
 
                 inputTag.addEventListener('input', () => inputTag.setCustomValidity(''));
             </script>
-            {% for post in posts %}
-                <article class="proyecto-card">
-                    <div class="proyecto-body">
-                    <h2><a class = 'titulopost' href="{% url 'blog:detail' post.slug %}">{{post.title}}</a></h2>
-                    <span>{{post.created_at|date:'d/m/Y'}}</span>
-                    <ul class="tags">
-                        {% for tag in post.tags.all %}
-                            <li>{{tag}}</li>
-                        {% endfor %}
-                    </ul>
-                    <p>
-                        {{post.description}}
-                    </p>
-                    </div>
-                </article>
-            {% endfor %}
+            <div class="contenedor-posts" style="height: 65vh;">
+                {% for post in posts %}
+                    <article class="proyecto-card">
+                        <div class="proyecto-body">
+                        <h2><a class = 'titulopost' href="{% url 'blog:detail' post.slug %}"><rainbow>{{post.title}}</rainbow></a></h2>
+                        <span>{{post.created_at|date:'d/m/Y'}}</span>
+                        <ul class="tags">
+                            {% for tag in post.tags.all %}
+                                <li>{{tag}}</li>
+                            {% endfor %}
+                        </ul>
+                        <p>
+                            {{post.description}}
+                        </p>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
         {% else %}
-            <h1>Tenés que buscar algo! ( ˶°ㅁ°) !!</h1>
+            <div class="cont-diseno-rosita">
+                <h1>Tenés que buscar algo! ( ˶°ㅁ°) !!</h1>
+            </div>
         {% endif %}
     {% endblock %}
